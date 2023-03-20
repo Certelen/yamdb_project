@@ -1,7 +1,6 @@
 name: Django-app workflow
 
 on:
-  workflow_dispatch
   push:
     branches: [ master ]
 
