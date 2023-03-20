@@ -5,7 +5,8 @@ from django.utils import timezone
 def validate_date(value):
     if value > timezone.now().year:
         raise ValidationError("Выбрана дата в будущем")
-    elif value < 0:
+
+    if value < 0:
         raise ValidationError("Нельзя указать отрицательное значение")
 
 

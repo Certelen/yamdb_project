@@ -23,12 +23,12 @@ class UserSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(
                 'Пользователь с этой почтой уже существует.'
             )
-        elif (User.objects.filter(email=email).exists()
+        if (User.objects.filter(email=email).exists()
                 and not User.objects.filter(username=username).exists()):
             raise serializers.ValidationError(
                 'Пользователь с этой почтой уже существует.'
             )
-        elif username == 'me':
+        if username == 'me':
             raise serializers.ValidationError(
                 'Нельзя использовать "me" как имя.'
             )
