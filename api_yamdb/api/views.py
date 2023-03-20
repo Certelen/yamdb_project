@@ -15,8 +15,8 @@ from reviews.models import Category, Genre, Review, Title
 from users.models import User
 
 from .filters import TitleFilter
-from .mixins import UpdateModelMixin, CreateListDestroyViewSet
 from .permissions import IsAdmin, IsAdminOrReadOnly, IsOwnerOrStaffOrReadOnly
+from .mixins import UpdateModelMixin, CreateListDestroyViewSet
 from .serializers import (CategorySerializer, CommentSerializer,
                           GenreSerializer, JWTSerializer, ReviewSerializer,
                           TitleReadSerializer, TitleWriteSerializer,
@@ -145,13 +145,11 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
     def get_title(self):
         title_id = self.kwargs.get('title_id')
-        title = get_object_or_404(Title, id=title_id)
-        return title
+        return get_object_or_404(Title, id=title_id)
 
     def get_queryset(self):
         title = ReviewViewSet.get_title(self)
-        new_queryset = title.review.all()
-        return new_queryset
+        return title.review.all()
 
     def perform_create(self, serializer):
         title = ReviewViewSet.get_title(self)
@@ -166,13 +164,11 @@ class CommentViewSet(viewsets.ModelViewSet):
 
     def get_review(self):
         review_id = self.kwargs.get('review_id')
-        review = get_object_or_404(Review, id=review_id)
-        return review
+        return get_object_or_404(Review, id=review_id)
 
     def get_queryset(self):
         review = CommentViewSet.get_review(self)
-        new_queryset = review.comments.all()
-        return new_queryset
+        return review.comments.all()
 
     def perform_create(self, serializer):
         review = CommentViewSet.get_review(self)
