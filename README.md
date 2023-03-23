@@ -1,4 +1,7 @@
 # ЯП - Спринт 13 - API для YaMDb в контейнере Docker.
+
+[![Django-app workflow](https://github.com/Certelen/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/Certelen/yamdb_final/actions/workflows/yamdb_workflow.yml)
+
 ## Описание
 Проект YaMDb функционирует через API и собирает отзывы (Review) пользователей на произведения (Titles). 
 Сами произведения в YaMDb не хранятся, здесь нельзя посмотреть фильм или послушать музыку.
@@ -122,6 +125,3 @@
 
 
 Проект сделан в рамках учебного процесса по специализации Python-разработчик (back-end) Яндекс.Практикум.
-
-yamdb_final
-[![Django-app workflow](https://github.com/Certelen/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/Certelen/yamdb_final/actions/workflows/yamdb_workflow.yml)
