@@ -2,7 +2,4 @@
 
 export PYTHONPATH=/app:$PYTHONPATH
 
-gunicorn
-api_yamdb.wsgi:application
---bind
-0:8000
+gunicorn api_yamdb.wsgi:application --bind 0:8000
