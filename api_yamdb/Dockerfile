@@ -8,4 +8,4 @@ RUN pip3 install -r api_yamdb/requirements.txt --no-cache-dir
 
 ENV PYTHONPATH api_yamdb
 
-CMD ["gunicorn", "api_yamdb.wsgi:application", "--bind", "0:8000" ] 
+CMD ["gunicorn", "--bind", "0:8000", "api_yamdb.wsgi:application"]
