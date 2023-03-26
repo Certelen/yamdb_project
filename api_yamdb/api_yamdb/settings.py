@@ -13,7 +13,7 @@ if SECRET_KEY is None:
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['158.160.18.54', '127.0.0.1', 'localhost', 'practicumyamdb055.ddns.net']
+ALLOWED_HOSTS = ['158.160.18.54', '127.0.0.1', 'localhost', 'practicumyamdb055.ddns.net', 'web']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
