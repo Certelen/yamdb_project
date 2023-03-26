@@ -11,7 +11,7 @@ SECRET_KEY = os.getenv('TOKEN')
 if SECRET_KEY is None:
     SECRET_KEY = "p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs"
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['158.160.18.54', '127.0.0.1', 'localhost', 'practicumyamdb055.ddns.net']
 
