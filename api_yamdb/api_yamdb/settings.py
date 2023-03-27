@@ -11,9 +11,15 @@ SECRET_KEY = os.getenv('TOKEN')
 if SECRET_KEY is None:
     SECRET_KEY = "p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs"
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['158.160.18.54', '127.0.0.1', 'localhost', 'practicumyamdb055.ddns.net', 'web']
+ALLOWED_HOSTS = [
+    '158.160.12.180',
+    '127.0.0.1',
+    'localhost',
+    'yandbfinal055.ddns.net',
+    'web'
+    ]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
