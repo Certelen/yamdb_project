@@ -14,10 +14,11 @@ if SECRET_KEY is None:
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '158.160.12.180',
-    '127.0.0.1',
     'localhost',
-    'yandbfinal055.ddns.net'
+    'web',
+    'yandbfinal055.ddns.net',
+    '127.0.0.1',
+    '158.160.12.180',
 ]
 
 INSTALLED_APPS = [
