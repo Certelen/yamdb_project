@@ -19,7 +19,7 @@ ALLOWED_HOSTS = [
     'localhost',
     'yandbfinal055.ddns.net',
     'web'
-    ]
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
