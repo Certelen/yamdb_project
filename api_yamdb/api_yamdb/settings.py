@@ -17,7 +17,7 @@ ALLOWED_HOSTS = [
     '158.160.12.180',
     '127.0.0.1',
     'localhost',
-    'yandbfinal055.ddns.net',
+    'yandbfinal055.ddns.net'
 ]
 
 INSTALLED_APPS = [
