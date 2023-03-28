@@ -3,7 +3,7 @@ services:
     image: postgres:13.0-alpine
     restart: always
     ports:
-      - "5432:5432"
+      - "db:5432"
     volumes:
       - db_data:/var/lib/postgresql/data/
     env_file:
@@ -12,7 +12,7 @@ services:
     image: certelen/yamdb_final:latest
     restart: always
     ports:
-      - "8000:8000"
+      - "web:8000"
     volumes:
       - static_value:/app/static/
       - media_value:/app/media/
