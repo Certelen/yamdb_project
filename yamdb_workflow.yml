@@ -72,7 +72,7 @@ jobs:
           sudo docker compose up -d
           sudo docker compose exec -it web bash cd api_yamdb/
           sudo docker compose exec web python api_yamdb/manage.py migrate
-          sudo docker compose exec web python api_yamdb/manage.py collectstatic -yes
+          sudo docker compose exec web python api_yamdb/manage.py collectstatic --noinput
   
   send_message:
     runs-on: ubuntu-latest
