@@ -77,7 +77,7 @@ nano .env
 - DB_ENGINE=django.db.backends.postgresql #Указываем, что работаем с postgresql
 - DB_NAME=postgres # имя базы данных
 - POSTGRES_USER=postgres # логин для подключения к базе данных
-- POSTGRES_PASSWORD=Creed5357 # пароль для подключения к БД
+- POSTGRES_PASSWORD=xxxyyyzzz # пароль для подключения к БД
 - DB_HOST=db # название сервиса (контейнера)
 - DB_PORT=5432 # порт для подключения к БД
 - TOKEN=p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs # проверочный токен
