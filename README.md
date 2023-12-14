@@ -189,6 +189,3 @@ sudo docker compose exec backend python manage.py createsuperuser
 - :white_check_mark: [Коломейцев Дмитрий(в роли Python-разработчика Тимлид - разработчик 1)](https://github.com/Certelen)
 - :white_check_mark: [Борель Николай(в роли Python-разработчика - разработчик 2)](https://github.com/nikolaiborel)
 - :white_check_mark: [Минин Георгий(в роли Python-разработчика - разработчик 3)](https://github.com/georgy-min)
-
-
-Проект сделан в рамках учебного процесса по специализации Python-разработчик (back-end) Яндекс.Практикум.
