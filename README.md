@@ -1,4 +1,4 @@
-# ЯП - Спринт 13 - API для YaMDb в контейнере Docker.
+# API для YaMDb в контейнере Docker.
 
 [![Django-app workflow](https://github.com/Certelen/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/Certelen/yamdb_final/actions/workflows/yamdb_workflow.yml)
 
@@ -14,7 +14,7 @@
 На отзывы можно оставлять комментарии (Comment).
 
 
-## Technology
+## Технологии
 - Python 3.7
 - Django 3.2
 - Docker
@@ -22,10 +22,58 @@
 - DRF
 - JWT
 
+# Установка
+## Копирование репозитория
+Клонируем репозиторий и переходим в директорию infra:
+```
+~ git clone git@github.com:Studio-Yandex-Practicum-Hackathons/cafe_azu_bot_2.git
+~ cd ./cafe_azu_bot_2/infra/
+```
+Требуется изменить server_name и listen в ./infra/nginx/default.conf, ports в docker-compose.yml
 
-## Documentation
-
-### Шаблон наполнения env-файла:
+## Подготовка боевого сервера:
+1. Перейдите на боевой сервер:
+```
+ssh username@server_address
+```
+2. Обновите индекс пакетов APT:
+```
+sudo apt update
+```
+и обновите установленные в системе пакеты и установите обновления безопасности:
+```
+sudo apt upgrade -y
+```
+Создайте папку `nginx`:
+```
+mkdir nginx
+``` 
+Скопируйте файлы docker-compose.yaml, nginx/default.conf из вашего проекта на сервер в home/<ваш_username>/docker-compose.yaml, home/<ваш_username>/nginx/default.conf соответственно:
+```
+scp docker-compose.yaml <username>@<host>/home/<username>/docker-compose.yaml
+scp default.conf <username>@<host>/home/<username>/nginx/default.conf
+```
+Установите Docker и Docker-compose:
+```
+sudo apt install docker.io
+```
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+```
+sudo chmod +x /usr/local/bin/docker-compose
+```
+Проверьте правильность установки Docker-compose:
+```
+sudo docker-compose --version
+```
+На боевом сервере создайте файл .env:
+```
+touch .env
+```
+и заполните переменные окружения
+```
+nano .env
 - DB_ENGINE=django.db.backends.postgresql #Указываем, что работаем с postgresql
 - DB_NAME=postgres # имя базы данных
 - POSTGRES_USER=postgres # логин для подключения к базе данных
@@ -33,6 +81,25 @@
 - DB_HOST=db # название сервиса (контейнера)
 - DB_PORT=5432 # порт для подключения к БД
 - TOKEN=p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs # проверочный токен
+```
+
+## Развертывание проекта с помощью Docker:
+Разворачиваем контейнеры в фоновом режиме из папки infra:
+```
+sudo docker compose up -d
+```
+При первом запуске выполняем миграции:
+```
+sudo docker compose exec backend python manage.py migrate
+```
+И собираем статику:
+```
+sudo docker compose exec backend python manage.py collectstatic --no-input
+```
+Создаем суперпользователя:
+```
+sudo docker compose exec backend python manage.py createsuperuser
+```
 
 ## Функционал:
 ###### USERS
