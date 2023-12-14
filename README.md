@@ -1,6 +1,6 @@
 # API для YaMDb в контейнере Docker.
 
-[![Django-app workflow](https://github.com/Certelen/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/Certelen/yamdb_final/actions/workflows/yamdb_workflow.yml)
+[![Django-app workflow](https://github.com/Certelen/yamdb_project/actions/workflows/yamdb_workflow.yml/badge.svg?branch=master)](https://github.com/Certelen/yamdb_project/actions/workflows/yamdb_workflow.yml)
 
 ## Описание
 Проект YaMDb функционирует через API и собирает отзывы (Review) пользователей на произведения (Titles). 
